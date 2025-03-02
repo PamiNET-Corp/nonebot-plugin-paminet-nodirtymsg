@@ -24,7 +24,6 @@ _✨ NoneBot 群聊脏话管理插件 ✨_
 ## 📖 介绍
 #### 只是一个平平无奇的聊天过滤插件。  
 #### 暂仅支持OnebotV11协议
-> [!WARN]
 > **该项目由DeepSeek-R1辅助开发！**
 
 > [!IMPORTANT]
@@ -69,7 +68,7 @@ _✨ NoneBot 群聊脏话管理插件 ✨_
 
 打开 nonebot2 项目根目录下的 `pyproject.toml` 文件, 在 `[tool.nonebot]` 部分追加写入
 
-    plugins = ["nonebot_plugin_template"]
+    plugins = ["nonebot-plugin-paminet-nodirtymsg"]
 
 </details>
 
