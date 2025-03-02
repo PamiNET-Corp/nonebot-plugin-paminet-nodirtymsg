@@ -22,9 +22,13 @@ _✨ NoneBot 群聊脏话管理插件 ✨_
 </div>
 
 ## 📖 介绍
+#### 只是一个平平无奇的聊天过滤插件。  
+#### 暂仅支持OnebotV11协议
+> [!WARN]
+> **该项目由DeepSeek-R1辅助开发！**
 
 > [!IMPORTANT]
-> **收藏项目**，你将从 GitHub 上无延迟地接收所有发布通知～⭐️
+> **收藏项目**，让更多人知道这个没什么用的东西！⭐️
 
 <img width="100%" src="https://starify.komoridevs.icu/api/starify?owner=PamiNET-Corp&repo=nonebot-plugin-paminet-nodirtymsg" alt="starify" />
 
@@ -75,14 +79,24 @@ _✨ NoneBot 群聊脏话管理插件 ✨_
 
 | 配置项 | 必填 | 默认值 | 说明 |
 |:-----:|:----:|:----:|:----:|
-| 配置项1 | 是 | 无 | 配置说明 |
-| 配置项2 | 否 | 无 | 配置说明 |
+| enable_dirty_msg_filter | 否 | True | 是否启用聊天过滤 |
 
 ## 🎉 使用
 ### 指令表
-| 指令 | 权限 | 需要@ | 范围 | 说明 |
-|:-----:|:----:|:----:|:----:|:----:|
-| 指令1 | 主人 | 否 | 私聊 | 指令说明 |
-| 指令2 | 群员 | 是 | 群聊 | 指令说明 |
+用去吧孩子，没指令
 ### 效果图
-如果有效果图的话
+如果有效果图的话暂无
+
+## 📄 许可证
+
+本项目使用 [MIT](./LICENSE) 许可证开源
+
+```txt
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
