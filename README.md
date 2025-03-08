@@ -88,6 +88,7 @@ _✨ NoneBot 群聊脏话管理插件 ✨_
 |:-----:|:----:|:----:|:----:|
 | DIRTY_MSG_FILTER_ENABLE | 否 | True | 是否启用聊天过滤 |
 | BADWORDS_DATA_PATH | 否 | "data/badwords.json" | 过滤词文件位置 |
+| MAX_RETRIES | 否 | 5 | 消息撤回重试次数 |
 
 ## 🎉 使用
 ### 指令表

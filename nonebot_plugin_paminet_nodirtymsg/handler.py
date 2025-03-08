@@ -1,4 +1,4 @@
-from nonebot import on_message
+from nonebot import on_message, get_driver
 from nonebot.adapters.onebot.v11 import MessageEvent, Bot
 from nonebot.matcher import Matcher
 from nonebot.log import logger
@@ -14,6 +14,7 @@ loader = BadWordsLoader()
 filter = BadWordsFilter()
 
 async def initialize():
+    """异步初始化违禁词过滤器"""
     words = await loader.load()
     if words:
         filter.build(words)
@@ -21,7 +22,12 @@ async def initialize():
     else:
         logger.warning("违禁词列表为空，过滤器未启用")
 
-asyncio.create_task(initialize())
+# 使用 nonebot 的生命周期钩子
+driver = get_driver()
+
+@driver.on_startup
+async def startup():
+    await initialize()
 
 @dirty_msg_filter.handle()
 async def handle_event(event: MessageEvent, bot: Bot):

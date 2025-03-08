@@ -26,4 +26,4 @@ class PluginConfig(BaseModel):
 
 driver = get_driver()
 global_config = driver.config
-plugin_config = PluginConfig(**global_config.dict())
+plugin_config = PluginConfig(**global_config.model_dump())
