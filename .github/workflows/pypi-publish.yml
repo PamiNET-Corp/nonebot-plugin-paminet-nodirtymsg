@@ -1,10 +1,6 @@
 name: Publish
 
-on:
-  push:
-    tags:
-      - '*'
-  workflow_dispatch:
+on: [push, pull_request]
 
 jobs:
   pypi-publish:
