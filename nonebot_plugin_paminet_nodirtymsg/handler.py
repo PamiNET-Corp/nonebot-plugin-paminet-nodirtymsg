@@ -1,7 +1,5 @@
-from nonebot import on_message, get_driver
+from nonebot import on_message, get_driver, logger
 from nonebot.adapters.onebot.v11 import MessageEvent, Bot
-from nonebot.matcher import Matcher
-from nonebot.log import logger
 from .config import plugin_config
 from .loader import BadWordsLoader
 from .filter import BadWordsFilter

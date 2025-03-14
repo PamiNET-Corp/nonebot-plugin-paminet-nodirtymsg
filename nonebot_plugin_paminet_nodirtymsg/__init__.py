@@ -16,5 +16,4 @@ __plugin_meta__ = PluginMetadata(
     },
 )
 
-# 确保导入 handler 模块
 from .handler import dirty_msg_filter

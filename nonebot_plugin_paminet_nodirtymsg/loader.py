@@ -1,15 +1,16 @@
+from nonebot import logger
+from nonebot_plugin_localstore import get_data_dir
 import json
 import aiofiles
 from pathlib import Path
 from typing import Set, Optional
-import logging
 from .config import plugin_config
-
-logger = logging.getLogger(__name__)
 
 class BadWordsLoader:
     def __init__(self):
-        self.file_path = Path(plugin_config.data_path)
+        # 使用 localstore 获取数据目录
+        data_dir = get_data_dir("paminet_nodirtymsg")
+        self.file_path = Path(data_dir) / "badwords.json"
         self.badwords: Set[str] = set()
 
     async def load(self) -> Optional[Set[str]]:
