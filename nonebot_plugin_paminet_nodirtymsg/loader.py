@@ -1,11 +1,14 @@
-from nonebot import logger
-from nonebot_plugin_localstore import get_data_dir
-import json
-import aiofiles
+from nonebot import logger, require
 from pathlib import Path
 from typing import Set, Optional
+import json
+import aiofiles
 from importlib import resources
 from .config import plugin_config
+
+# 使用 require 加载 nonebot_plugin_localstore
+require("nonebot_plugin_localstore")
+from nonebot_plugin_localstore import get_data_dir
 
 class BadWordsLoader:
     def __init__(self):
