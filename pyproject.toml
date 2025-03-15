@@ -1,6 +1,6 @@
 [project]
 name = "nonebot-plugin-paminet-nodirtymsg"
-version = "0.3.3"
+version = "0.3.4"
 description = "基于Trie树的高效群聊违禁词过滤插件,自动撤回群成员的敏感发言.需要管理员权限."
 authors = [
     { name = "Mipa", email = "shcdwrzh@outlook.com" }
