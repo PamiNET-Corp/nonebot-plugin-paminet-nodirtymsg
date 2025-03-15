@@ -10,7 +10,7 @@ __plugin_meta__ = PluginMetadata(
     config=PluginConfig,
     supported_adapters={"~onebot.v11"},
     extra={
-        "version": "0.3.0",
+        "version": "0.3.1",
         "author": "PamiNET",
         "license": "MIT",
     },
