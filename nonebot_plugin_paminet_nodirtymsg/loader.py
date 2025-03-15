@@ -8,7 +8,7 @@ from typing import Set, Optional
 class BadWordsLoader:
     def __init__(self):
         # 使用 localstore 获取插件数据目录
-        self.data_dir = get_plugin_data_dir("paminet_nodirtymsg")
+        self.data_dir = get_plugin_data_dir()
         self.file_path = self.data_dir / "badwords.json"
         self.badwords: Set[str] = set()
     
