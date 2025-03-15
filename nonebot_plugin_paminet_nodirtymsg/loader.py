@@ -1,20 +1,18 @@
 from nonebot import logger, require
-from pathlib import Path
-from typing import Set, Optional
+from nonebot_plugin_localstore import get_plugin_data_dir
 import json
 import aiofiles
-from importlib import resources
-from .config import plugin_config
+from pathlib import Path
+from typing import Set, Optional
 
 # 使用 require 加载 nonebot_plugin_localstore
 require("nonebot_plugin_localstore")
-from nonebot_plugin_localstore import get_data_dir
 
 class BadWordsLoader:
     def __init__(self):
-        # 使用 localstore 获取数据目录
-        data_dir = plugin_config.data_path or get_data_dir("paminet_nodirtymsg")
-        self.file_path = Path(data_dir) / "badwords.json"
+        # 使用 localstore 获取插件数据目录
+        self.data_dir = get_plugin_data_dir("paminet_nodirtymsg")
+        self.file_path = self.data_dir / "badwords.json"
         self.badwords: Set[str] = set()
     
     async def load(self) -> Optional[Set[str]]:
@@ -43,10 +41,10 @@ class BadWordsLoader:
     async def _release_default_file(self):
         """释放预制的 badwords.json 文件"""
         self.file_path.parent.mkdir(parents=True, exist_ok=True)
-        # 使用 importlib.resources 读取包内资源文件
-        with resources.path("nonebot_plugin_paminet_nodirtymsg.data", "badwords.json") as src_path:
-            async with aiofiles.open(src_path, "r", encoding="utf-8") as src, \
-                         aiofiles.open(self.file_path, "w", encoding="utf-8") as dst:
-                content = await src.read()
-                await dst.write(content)
+        # 使用 pathlib.Path 获取预制文件路径
+        default_file = Path(__file__).parent / "data/badwords.json"
+        async with aiofiles.open(default_file, "r", encoding="utf-8") as src, \
+                     aiofiles.open(self.file_path, "w", encoding="utf-8") as dst:
+            content = await src.read()
+            await dst.write(content)
         logger.info(f"已释放默认违禁词文件到：{self.file_path}")

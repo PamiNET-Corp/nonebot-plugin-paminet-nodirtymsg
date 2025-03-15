@@ -17,7 +17,7 @@ _✨ NoneBot 群聊脏话管理插件 ✨_
 <a href="https://pypi.python.org/pypi/nonebot-plugin-paminet-nodirtymsg">
     <img src="https://img.shields.io/pypi/v/nonebot-plugin-paminet-nodirtymsg.svg" alt="pypi">
 </a>
-<img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="python">
+<img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="python">
 
 </div>
 
