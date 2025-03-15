@@ -1,6 +1,6 @@
 [project]
 name = "nonebot-plugin-paminet-nodirtymsg"
-version = "0.3.8"
+version = "0.3.9"
 description = "基于Trie树的高效群聊违禁词过滤插件,自动撤回群成员的敏感发言.需要管理员权限."
 authors = [
     { name = "Mipa", email = "shcdwrzh@outlook.com" }
@@ -38,6 +38,7 @@ paminet_nodirtymsg = "nonebot_plugin_paminet_nodirtymsg"
 
 [tool.setuptools]
 packages = ["nonebot_plugin_paminet_nodirtymsg"]
+nonebot_plugin_localstore = "nonebot_plugin_localstore"
 include-package-data = true
 
 [tool.setuptools.package-data]
