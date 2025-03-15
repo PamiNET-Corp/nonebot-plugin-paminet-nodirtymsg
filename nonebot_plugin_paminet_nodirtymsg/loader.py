@@ -5,14 +5,15 @@ import aiofiles
 from pathlib import Path
 from typing import Set, Optional
 from importlib import resources
+from .config import plugin_config
 
 class BadWordsLoader:
     def __init__(self):
         # 使用 localstore 获取数据目录
-        self.data_dir = get_data_dir("paminet_nodirtymsg")
-        self.file_path = Path(self.data_dir) / "badwords.json"
+        data_dir = plugin_config.data_path or get_data_dir("paminet_nodirtymsg")
+        self.file_path = Path(data_dir) / "badwords.json"
         self.badwords: Set[str] = set()
-
+    
     async def load(self) -> Optional[Set[str]]:
         """异步加载违禁词列表"""
         try:
@@ -38,7 +39,7 @@ class BadWordsLoader:
 
     async def _release_default_file(self):
         """释放预制的 badwords.json 文件"""
-        self.data_dir.mkdir(parents=True, exist_ok=True)
+        self.file_path.parent.mkdir(parents=True, exist_ok=True)
         # 使用 importlib.resources 读取包内资源文件
         with resources.path("nonebot_plugin_paminet_nodirtymsg.data", "badwords.json") as src_path:
             async with aiofiles.open(src_path, "r", encoding="utf-8") as src, \
